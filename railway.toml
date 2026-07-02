@@ -1,0 +1,21 @@
+[build]
+builder = "NIXPACKS"
+
+[build.nixpacks]
+plan = """
+[phases.setup]
+nixPkgs = ["php81", "php81Extensions.mysqli", "php81Extensions.curl"]
+
+[phases.install]
+cmds = ["echo 'Installing dependencies...'"]
+
+[phases.build]
+cmds = ["echo 'Building...'"]
+
+[phases.start]
+cmd = "php -S 0.0.0.0:$PORT -t ."
+"""
+
+[deploy]
+startCommand = "php -S 0.0.0.0:${PORT} -t ."
+healthcheckPath = "/"
