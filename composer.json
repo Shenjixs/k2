@@ -1,0 +1,8 @@
+{
+  "name": "kimtim/backend",
+  "description": "Kimtim Backend API",
+  "type": "project",
+  "require": {
+    "php": ">=7.4"
+  }
+}
